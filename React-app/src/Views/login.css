@@ -1,0 +1,177 @@
+.lg-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 24px;
+    box-sizing: border-box;
+    background: #f1f8ff url("/bg-blobs.svg") center / cover no-repeat fixed;
+    font-family: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    color: #17304d;
+}
+
+.lg-card {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    width: 100%;
+    max-width: 960px;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 28px;
+    box-shadow: 0 30px 80px rgba(18, 64, 110, 0.22);
+}
+
+/* ---------- Illustration side ---------- */
+.lg-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 36px 28px;
+    text-align: center;
+    background: linear-gradient(160deg, #f1f8ff 0%, #d6e9fb 100%);
+}
+.lg-art {
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+    margin-bottom: 12px;
+}
+.lg-side h3 {
+    margin: 0 0 8px;
+    font-size: 22px;
+    font-weight: 800;
+    color: #1f6fc2;
+}
+.lg-side p {
+    margin: 0;
+    max-width: 290px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #5d7590;
+}
+
+/* ---------- Form side ---------- */
+.lg-form-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 48px 44px;
+}
+.lg-form-wrap h2 {
+    margin: 0 0 6px;
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #12406e;
+}
+.lg-sub {
+    margin: 0 0 22px;
+    font-size: 14px;
+    color: #5d7590;
+}
+
+.lg-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.lg-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.lg-field > span {
+    font-size: 13px;
+    font-weight: 600;
+    color: #12406e;
+}
+.lg-field input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    font: inherit;
+    font-size: 14px;
+    color: #17304d;
+    background: #f1f8ff;
+    border: 1.5px solid transparent;
+    border-radius: 12px;
+    outline: none;
+    transition: border-color 0.15s, background 0.15s, box-shadow 0.15s;
+}
+.lg-field input::placeholder { color: #93a8bd; }
+.lg-field input:focus {
+    background: #fff;
+    border-color: #4a9ee8;
+    box-shadow: 0 0 0 4px rgba(74, 158, 232, 0.18);
+}
+
+.lg-password { position: relative; }
+.lg-password input { padding-right: 64px; }
+.lg-password button {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    padding: 4px 8px;
+    font: inherit;
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #1f6fc2;
+    background: none;
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.lg-password button:hover { background: #d6e9fb; }
+
+.lg-submit {
+    margin-top: 4px;
+    padding: 13px 20px;
+    font: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(135deg, #4a9ee8, #1f6fc2);
+    border: 0;
+    border-radius: 12px;
+    box-shadow: 0 10px 24px rgba(31, 111, 194, 0.32);
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+.lg-submit:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(31, 111, 194, 0.42);
+}
+.lg-submit:disabled {
+    opacity: 0.7;
+    cursor: wait;
+}
+.lg-submit:focus-visible,
+.lg-password button:focus-visible {
+    outline: 3px solid rgba(74, 158, 232, 0.5);
+    outline-offset: 2px;
+}
+
+.lg-switch {
+    margin: 4px 0 0;
+    text-align: center;
+    font-size: 14px;
+    color: #5d7590;
+}
+.lg-switch a {
+    font-weight: 700;
+    color: #1f6fc2;
+    text-decoration: none;
+}
+.lg-switch a:hover { text-decoration: underline; }
+
+/* ---------- Mobile ---------- */
+@media (max-width: 800px) {
+    .lg-card { grid-template-columns: 1fr; }
+    .lg-side { padding: 22px 20px 8px; }
+    .lg-art { max-width: 220px; margin-bottom: 4px; }
+    .lg-side p { display: none; }
+    .lg-side h3 { font-size: 18px; }
+    .lg-form-wrap { padding: 28px 24px 32px; }
+}
